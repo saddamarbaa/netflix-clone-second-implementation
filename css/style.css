@@ -119,4 +119,13 @@ ul li {
   color: var(--white);
 }
 
+.featured__title {
+  font-size: 5vw;
+  text-transform: uppercase;
+  text-align: center;
+  width: min-content;
+  letter-spacing: 12px;
+  line-height: 0.9;
+}
+
 /********** End Featured Section **********/
