@@ -8,7 +8,7 @@
 
 body {
   font-family: Helvetica, sans-serif;
-  /* background: #141414; */
+  background: #141414;
 }
 
 h2 {
@@ -27,4 +27,73 @@ button {
   outline: none;
 }
 
-/********** Start Generic Styles **********/
+/********** End Generic Styles **********/
+
+/********** Start Header Section **********/
+
+.logo {
+  width: 100px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background: rgb(20, 20, 20, 0.3);
+  height: 68px; /* review */
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+ul li {
+  margin-right: 1rem;
+}
+
+.main-menu {
+  margin-left: 2rem;
+}
+
+.main-menu a {
+  color: #e5e5e5;
+  transition: color 0.4s;
+}
+
+.main-menu a:hover {
+  color: #b3b3b3;
+}
+
+.main-menu .main-menu__item .active {
+  color: #fff;
+  cursor: default;
+}
+
+.secondary-menu {
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2.75vw;
+  color: #fff;
+}
+
+.secondary-menu__item {
+  margin-left: 1.15rem;
+}
+
+.secondary-menu button {
+  font-size: 1.2rem;
+  background: transparent;
+  color: inherit;
+}
+
+.secondary-menu a {
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/********** End Header Section **********/
