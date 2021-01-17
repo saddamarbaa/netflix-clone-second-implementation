@@ -1,5 +1,13 @@
 /********** Start Base Styles (Generic) **********/
 
+/* CSS variables */
+:root {
+  --white: #fff;
+  --black: #000;
+  --Gray8: #141414;
+  --Nero: rgb(20, 20, 20, 0.3); /* Header background */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +16,12 @@
 
 body {
   font-family: Helvetica, sans-serif;
-  background: #141414;
+  background: var(--Gray8);
 }
 
 h2 {
   font-size: 1.4vw;
-  color: #fff;
+  color: var(--white);
   margin-bottom: 1.1rem;
 }
 
@@ -38,7 +46,7 @@ button {
 header {
   display: flex;
   align-items: center;
-  background: rgb(20, 20, 20, 0.3);
+  background: var(--Nero);
   height: 68px; /* review */
   position: fixed;
   top: 0;
@@ -68,7 +76,7 @@ ul li {
 }
 
 .main-menu .main-menu__item .active {
-  color: #fff;
+  color: var(--white);
   cursor: default;
 }
 
@@ -77,7 +85,7 @@ ul li {
   justify-content: flex-end;
   align-items: center;
   margin-right: 2.75vw;
-  color: #fff;
+  color: var(--white);
 }
 
 .secondary-menu__item {
@@ -97,3 +105,18 @@ ul li {
 }
 
 /********** End Header Section **********/
+
+/********** Start Featured Section **********/
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  background: var(--black)
+    url("https://occ-0-3633-2706.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZeP9pSR2QoF8yCWWsV6i9IPx7lGzd1UHYpQADXbzclMMm8u4OtcTTfd-JGrDtPJ6scyuOin30EgS1P0EqBbQ3GGGssE.jpg?r=19b")
+    no-repeat center center/cover;
+  height: 50vw;
+  justify-content: center;
+  color: var(--white);
+}
+
+/********** End Featured Section **********/
