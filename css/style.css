@@ -128,4 +128,12 @@ ul li {
   line-height: 0.9;
 }
 
+.featured__description {
+  width: 41%;
+  font-size: 1.5vw;
+  margin: 1.1rem 0;
+  line-height: 1.35;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+}
+
 /********** End Featured Section **********/
