@@ -1,0 +1,30 @@
+/********** Start Base Styles (Generic) **********/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  /* background: #141414; */
+}
+
+h2 {
+  font-size: 1.4vw;
+  color: #fff;
+  margin-bottom: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/********** Start Generic Styles **********/
