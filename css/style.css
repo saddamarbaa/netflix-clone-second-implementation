@@ -197,3 +197,50 @@ ul li {
 }
 
 /********** End Featured Section **********/
+
+/********** Start Movies Section **********/
+
+.my-list {
+  margin-top: -8vw;
+}
+
+.movie-container {
+  white-space: nowrap;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+.movie-section {
+  margin-top: 3.5vw;
+}
+
+.movie-container img {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.netflixOriginal-container img {
+  height: 100%;
+}
+
+.basic-movies {
+  height: 11vw;
+}
+
+.big-movies {
+  height: 35vw;
+}
+
+/*.movie-container img:hover {
+	transform: scale(1.3);  review 
+}*/
+
+/********** End Movies Section **********/
+
+/********** Start Framework **********/
+
+.spacing-left {
+  padding-left: 2.75vw;
+}
+
+/********** End Framework **********/
