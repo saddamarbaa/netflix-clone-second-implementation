@@ -285,3 +285,54 @@ ul li {
 }
 
 /********** End Framework **********/
+
+/********** Dropdown Menus **********/
+
+#secondary-menu-dropdown-cntent {
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  min-width: 5rem;
+  transition: all 0.5s ease;
+  /* margin-top: 1rem; */
+  background: darkorange;
+  right: 0;
+}
+
+.secondary-menu__item {
+  position: relative;
+}
+
+#secondary-menu-dropdown-cntent a {
+  color: white;
+}
+
+#cat:hover > ul,
+#secondary-menu-dropdown-cntent:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+#secondary-menu-dropdown-cntent li:hover {
+  width: 100%;
+  background: red;
+  cursor: pointer;
+}
+
+#secondary-menu-dropdown-cntent li {
+  width: 100%;
+  float: left;
+  padding: 1rem;
+}
+
+#secondary-menu-dropdown-cntent hr {
+  background: blue;
+  width: 100%;
+}
+
+#secondary-menu-dropdown:hover #secondary-menu-dropdown-cntent {
+  display: block;
+}
