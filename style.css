@@ -286,7 +286,7 @@ ul li {
 
 /********** End Framework **********/
 
-/********** Dropdown Menus **********/
+/********** Start Dropdown Menus( Still under Testing) **********/
 
 #secondary-menu-dropdown-cntent {
   display: block;
@@ -296,7 +296,7 @@ ul li {
   display: none;
   min-width: 5rem;
   transition: all 0.5s ease;
-  /* margin-top: 1rem; */
+  margin-top: 1.3rem;
   background: darkorange;
   right: 0;
 }
@@ -305,8 +305,9 @@ ul li {
   position: relative;
 }
 
-#secondary-menu-dropdown-cntent a {
-  color: white;
+#cat:hover {
+  /* height: 50px; */
+  padding-bottom: 1.3rem;
 }
 
 #cat:hover > ul,
@@ -326,6 +327,7 @@ ul li {
   width: 100%;
   float: left;
   padding: 1rem;
+  transition-duration: 0.5s;
 }
 
 #secondary-menu-dropdown-cntent hr {
@@ -336,3 +338,5 @@ ul li {
 #secondary-menu-dropdown:hover #secondary-menu-dropdown-cntent {
   display: block;
 }
+
+/********** End Dropdown Menus **********/
