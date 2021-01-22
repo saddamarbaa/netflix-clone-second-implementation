@@ -1,12 +1,4 @@
-/********** Start Base Styles (Generic) **********/
-
-/* CSS variables */
-:root {
-  --white: #fff;
-  --black: #000;
-  --Gray8: #141414;
-  --Nero: rgb(20, 20, 20, 0.3); /* Header background */
-}
+/********** Generic Styles **********/
 
 * {
   margin: 0;
@@ -16,17 +8,18 @@
 
 body {
   font-family: Helvetica, sans-serif;
-  background: var(--Gray8);
+  background: #141414;
 }
 
 h2 {
   font-size: 1.4vw;
-  color: var(--white);
+  color: #fff;
   margin-bottom: 1.1rem;
 }
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 button {
@@ -34,8 +27,6 @@ button {
   border: none;
   outline: none;
 }
-
-/********** End Generic Styles **********/
 
 /********** Start Header Section **********/
 
@@ -46,25 +37,30 @@ button {
 header {
   display: flex;
   align-items: center;
-  background: rgb(20, 20, 20, 0.1);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(0, 0, 0, 0)
+  );
   height: 68px; /* review */
   position: fixed;
   top: 0;
   width: 100%;
-  transition: background 0.4s 0.15s;
+  /* transition is added with JavaScript */
   z-index: 15;
 }
 
 ul {
   list-style-type: none;
-  display: flex;
 }
 
-ul li {
-  margin-right: 1rem;
+.main-menu__item {
+  margin-right: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .main-menu {
+  display: flex;
   margin-left: 2rem;
 }
 
@@ -78,20 +74,22 @@ ul li {
 }
 
 .main-menu .main-menu__item .active {
-  color: var(--white);
+  color: #fff;
+  font-weight: 700;
   cursor: default;
 }
 
 .secondary-menu {
+  display: flex;
   flex: 1;
   justify-content: flex-end;
   align-items: center;
   margin-right: 2.75vw;
-  color: var(--white);
+  color: #fff;
 }
 
 .secondary-menu__item {
-  margin-left: 1.15rem;
+  margin-left: 1.75rem;
 }
 
 .secondary-menu button {
@@ -100,31 +98,124 @@ ul li {
   color: inherit;
 }
 
-.secondary-menu a {
+.kids {
   color: inherit;
   text-transform: uppercase;
   font-size: 0.9rem;
 }
 
-/********** End Header Section **********/
+.secondary-menu__item i {
+  font-size: 22px;
+}
 
-/********** Start Featured Section **********/
+.secondary-menu__item img {
+  border-radius: 4px;
+}
+
+.profile-icon button {
+  padding-right: 8px;
+}
+
+.profile-icon button::after {
+  content: "";
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Dropdowns */
+.profile-icon {
+  position: relative;
+}
+
+.dropdown-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s ease;
+}
+
+.dropdown-content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  width: 175px;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+.dropdown-content li {
+  margin-bottom: 14px;
+}
+
+.profiles,
+.account {
+  padding: 15px 15px 0;
+}
+
+.profiles {
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.profiles li:last-child {
+  margin-bottom: 20px;
+}
+
+.account {
+  font-size: 0.775rem;
+  font-weight: 700;
+}
+
+.account li:first-child {
+  margin-top: 5px;
+}
+
+.dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: -18px;
+  border-width: 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.profile-icon:hover .dropdown-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+/********** Start Featured Section  **********/
 
 .featured {
   display: flex;
   flex-direction: column;
-  background: var(--black)
+  background: #000
     url("https://occ-0-3633-2706.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZeP9pSR2QoF8yCWWsV6i9IPx7lGzd1UHYpQADXbzclMMm8u4OtcTTfd-JGrDtPJ6scyuOin30EgS1P0EqBbQ3GGGssE.jpg?r=19b")
     no-repeat center center/cover;
   height: 50vw;
   justify-content: center;
-  color: var(--white);
+  color: #fff;
   position: relative;
 }
 
 .featured::before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    77deg,
+    rgba(0, 0, 0, 0.6) 0,
+    rgba(0, 0, 0, 0) 85%
+  );
   position: absolute;
   top: 0;
   bottom: 0;
@@ -191,8 +282,8 @@ ul li {
 }
 
 .play {
-  background: var(--white);
-  color: var(--black);
+  background: #fff;
+  color: #000;
   margin-right: 10px;
 }
 
@@ -202,7 +293,7 @@ ul li {
 
 .more-info {
   background-color: rgba(109, 109, 110, 0.7);
-  color: var(--white);
+  color: #fff;
 }
 
 .more-info:hover {
@@ -237,9 +328,7 @@ ul li {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/********** End Featured Section **********/
-
-/********** Start Movies Section **********/
+/**********  Movies Section **********/
 
 .my-list {
   margin-top: -8vw;
@@ -265,7 +354,7 @@ ul li {
 }
 
 .basic-movies {
-  height: 11vw;
+  height: 11.5vw;
 }
 
 .big-movies {
@@ -276,67 +365,10 @@ ul li {
 	transform: scale(1.3);  review 
 }*/
 
-/********** End Movies Section **********/
-
-/********** Start Framework **********/
+/* ////////////////
+						Framework
+		/////////////// */
 
 .spacing-left {
   padding-left: 2.75vw;
 }
-
-/********** End Framework **********/
-
-/********** Start Dropdown Menus( Still under Testing) **********/
-
-#secondary-menu-dropdown-cntent {
-  display: block;
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  display: none;
-  min-width: 5rem;
-  transition: all 0.5s ease;
-  margin-top: 1.3rem;
-  background: darkorange;
-  right: 0;
-}
-
-.secondary-menu__item {
-  position: relative;
-}
-
-#cat:hover {
-  /* height: 50px; */
-  padding-bottom: 1.3rem;
-}
-
-#cat:hover > ul,
-#secondary-menu-dropdown-cntent:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-}
-
-#secondary-menu-dropdown-cntent li:hover {
-  width: 100%;
-  background: red;
-  cursor: pointer;
-}
-
-#secondary-menu-dropdown-cntent li {
-  width: 100%;
-  float: left;
-  padding: 1rem;
-  transition-duration: 0.5s;
-}
-
-#secondary-menu-dropdown-cntent hr {
-  background: blue;
-  width: 100%;
-}
-
-#secondary-menu-dropdown:hover #secondary-menu-dropdown-cntent {
-  display: block;
-}
-
-/********** End Dropdown Menus **********/
