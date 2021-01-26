@@ -19,6 +19,31 @@ const getPopular = function () {
     "https://api.themoviedb.org/3/discover/tv?api_key=92bcc12799d8068995c7c9650f414f3e&sort_by=vote_average.desc&vote_count.gte=5000";
   callFetch(popularURL, "popular");
 };
+
+const getTrending = function () {
+  const trendingURL =
+    "https://api.themoviedb.org/3/trending/tv/week?api_key=92bcc12799d8068995c7c9650f414f3e";
+  callFetch(trendingURL, "trending");
+};
+
+const callFetch = function (URL, id) {
+  console.log(URL);
+  fetch(URL)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      } else {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      displayMovies(data, id);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 // function calls
 callFetch();
 findGenreID("Drama");
