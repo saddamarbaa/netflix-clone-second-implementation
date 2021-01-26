@@ -26,16 +26,6 @@ const getTrending = function () {
   callFetch(trendingURL, "trending");
 };
 
-// Check if a movie is already displayed
-const movieIsNotDisplayed = function (movieID) {
-  // push movie_id in the array when is NOT DISPLAYED
-  if (!alreadyDisplayed.includes(movieID)) {
-    alreadyDisplayed.push(movieID);
-    return true; // When the movie is not in the [alreadyDisplayed] array
-  }
-  return false; // When the movie is already displayed
-};
-
 const callFetch = function (URL, id) {
   console.log(URL);
   fetch(URL)
@@ -54,9 +44,29 @@ const callFetch = function (URL, id) {
     });
 };
 
-// function calls
-callFetch();
-findGenreID("Drama");
+// Check if a movie is already displayed
+const movieIsNotDisplayed = function (movieID) {
+  // push movie_id in the array when is NOT DISPLAYED
+  if (!alreadyDisplayed.includes(movieID)) {
+    alreadyDisplayed.push(movieID);
+    return true; // When the movie is not in the [alreadyDisplayed] array
+  }
+  return false; // When the movie is already displayed
+};
 
-// Giving back the GENRES
+const displayMovies = function (data, id) {
+  const containerEL = document.getElementById(id);
+
+  data.results.forEach((movie) => {
+    if (movieIsNotDisplayed(movie.id)) {
+      const imageEl = ` <img src="https://image.tmdb.org/t/p/original/${movie.backdrop_path}" alt="${id}">`;
+      containerEL.innerHTML += imageEl;
+    }
+  });
+  console.log(alreadyDisplayed);
+};
+
+getPopular();
+getTrending();
+
 //  https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
