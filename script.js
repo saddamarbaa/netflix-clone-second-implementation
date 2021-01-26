@@ -26,6 +26,16 @@ const getTrending = function () {
   callFetch(trendingURL, "trending");
 };
 
+// Check if a movie is already displayed
+const movieIsNotDisplayed = function (movieID) {
+  // push movie_id in the array when is NOT DISPLAYED
+  if (!alreadyDisplayed.includes(movieID)) {
+    alreadyDisplayed.push(movieID);
+    return true; // When the movie is not in the [alreadyDisplayed] array
+  }
+  return false; // When the movie is already displayed
+};
+
 const callFetch = function (URL, id) {
   console.log(URL);
   fetch(URL)
