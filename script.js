@@ -111,3 +111,29 @@ const fetchMoviesBasedOnGenre = (genreId) => {
     }
   }); // returns a promise already
 };
+
+/**
+ * function to fetch movies genres from (TMDb) API
+ */
+
+const getGenres = () => {
+  const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=92bcc12799d8068995c7c9650f414f3e&language=en-US`;
+
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        // throw new Error(response.statusText);
+        throw new Error("Something went wrong");
+      }
+    })
+    .then((data) => {
+      // object with List of official genres for movies
+      console.log(data);
+      showMoviesGenres(data);
+    })
+    .catch((error) => {
+      console.log("Fetch Error :-S", error);
+    });
+};
