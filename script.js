@@ -69,4 +69,18 @@ const displayMovies = function (data, id) {
 getPopular();
 getTrending();
 
-//  https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+// https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+
+/**
+ * this are the list of official genres for movies
+ * https://developers.themoviedb.org/3/genres/get-movie-list
+ */
+
+// https://api.themoviedb.org/3/genre/movie/list?api_key=92bcc12799d8068995c7c9650f414f3e&language=en-US
+
+/**
+ * this are movies genres
+ * https://developers.themoviedb.org/3/discover/movie-discover
+ */
+
+//https://api.themoviedb.org/3/discover/movie?api_key=92bcc12799d8068995c7c9650f414f3e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=53
