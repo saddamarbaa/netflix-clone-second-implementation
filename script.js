@@ -1,5 +1,4 @@
 // Call functions whe the page is loaded
-
 window.onload = () => {
   getPopular();
   getTrending();
@@ -74,6 +73,8 @@ const displayMovies = function (data, id) {
   console.log(alreadyDisplayed);
 };
 
+/************************* START FROM HERE *******/
+
 // https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
 
 /**
@@ -136,4 +137,81 @@ const getGenres = () => {
     .catch((error) => {
       console.log("Fetch Error :-S", error);
     });
+};
+
+/**
+ * function to show Movies to the front end based on their genres
+ *  @param {genreName}  genre Name
+ *  @param {movies}  movies
+	* 
+	 <div class="movie-section spacing-left">
+    <h2>Trending Now</h2>
+    <div class="movie-container basic-movies" id="trending">
+      <!-- Inserted with JavaScript -->
+    </div>
+  </div>
+ *
+ */
+
+const showMoviesBasedOnGenre = (genreName, movies) => {
+  // console.log(movies);
+  // console.log(genreName);
+
+  // create  <div class="movie-section spacing-left"> for each row
+  let movies_section = document.querySelector(".movie-section");
+  console.log(movies_section);
+
+  // create h <h2>{genreName}</h2> for each row
+  let genreEl = document.createElement("h2");
+  genreEl.innerHTML = genreName;
+  // console.log(genreEl);
+
+  // create <div class="movie-container basic-movies" id=genreName> for each row
+  let moviesEl = document.createElement("div");
+  moviesEl.classList.add("movie-container");
+  moviesEl.classList.add("basic-movies");
+  moviesEl.setAttribute("id", genreName);
+  // console.log(moviesEl);
+
+  for (let movie of movies.results) {
+    // console.log(movie);
+    let imageElement = document.createElement("img");
+    let { backdrop_path, id } = movie;
+    console.log("TESTING DESCONSTRUCT:", id, backdrop_path);
+    imageElement.src = `https://image.tmdb.org/t/p/original${backdrop_path}`;
+
+    moviesEl.appendChild(imageElement);
+    console.log(moviesEl);
+  }
+
+  movies_section.appendChild(genreEl);
+  movies_section.appendChild(moviesEl);
+};
+
+/**
+ * function to loop through all the given genres and pass each genner ID to
+ * fetchMoviesBasedOnGenre() function and after get movies back will pass to  *showMoviesBasedOnGenre() to show on the front end
+ * @param {genres}  all the genres from API
+ *
+ */
+
+const showMoviesGenres = (genres) => {
+  // console.log(genres);
+  genres.genres.forEach((genre) => {
+    // console.log(genre);
+
+    // get list of movies
+    let movies = fetchMoviesBasedOnGenre(genre.id);
+
+    // now we have the movies based on genres ready
+    movies
+      .then((movies) => {
+        // console.log(movies);
+        showMoviesBasedOnGenre(genre.name, movies);
+      })
+      .catch((error) => {
+        console.log("BAD BAD", error);
+      });
+    // show movies based on genre
+  });
 };
