@@ -1,3 +1,11 @@
+// Call functions whe the page is loaded
+
+window.onload = () => {
+  getPopular();
+  getTrending();
+  getGenres();
+};
+
 // Navigation Scroll feature
 const navigation = document.getElementById("navigation");
 
@@ -66,9 +74,6 @@ const displayMovies = function (data, id) {
   console.log(alreadyDisplayed);
 };
 
-getPopular();
-getTrending();
-
 // https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
 
 /**
@@ -84,3 +89,25 @@ getTrending();
  */
 
 //https://api.themoviedb.org/3/discover/movie?api_key=92bcc12799d8068995c7c9650f414f3e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=53
+
+/**
+ * function to fetch movies from (TMDb) base on given genre ID
+ * the form so that we can handle things instead.
+ * @param {genreId} genre ID
+ */
+
+const fetchMoviesBasedOnGenre = (genreId) => {
+  let url = "https://api.themoviedb.org/3/discover/movie?";
+
+  url +=
+    "api_key=92bcc12799d8068995c7c9650f414f3e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2";
+
+  url += `&with_genres=${genreId}`;
+  return fetch(url).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("something went wrong");
+    }
+  }); // returns a promise already
+};
