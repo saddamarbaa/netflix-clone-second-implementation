@@ -6,7 +6,7 @@
 ## About The Project
 This project is the **Front-end** of the *NETFLIX*. We try to make it as much as close to the *NETFLIX* web app without many technologies. Our aim is to understand the fundamentals of the Web.
 
-### <a href="Netflix Clone]https://saddamarbaa.github.io/netflix-clone-second-implementation/">VIEW LIVE DEMO </a>
+###  <a href="Netflix Clone]https://saddamarbaa.github.io/netflix-clone-second-implementation/">LIVE DEMO </a>
 
 ### Built With
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
